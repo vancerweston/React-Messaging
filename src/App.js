@@ -3,6 +3,7 @@ import {Component} from "react";
 import Messages from './components/Messages';
 import Input from './components/Input';
 import Header from './components/Header';
+import 'emoji-mart/css/emoji-mart.css';
 import './App.css';
 
 

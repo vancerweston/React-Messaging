@@ -77,12 +77,37 @@
   background-color: orangered;
 }
 
+.emoji-mart-scroll {
+  height: 125px;
+}
+
+.emoji-mart-preview {
+  height: 50px;
+}
+
+.emoji-mart-anchor {
+  padding: 5px 4px;
+}
+.emoji-mart-anchors {
+  height: 27px;
+}
+
+div#emojiContainer {
+  text-align: center;
+}
+
+div#emojipopup {
+  width: 900px;
+  margin: 0 auto;
+  text-align: right;
+}
+
 form {
   display: flex;
   width: 100%;
   justify-content: space-between;
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0 auto 10px;
 }
 
 input {
