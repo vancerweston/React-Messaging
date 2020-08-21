@@ -24,6 +24,11 @@ class Input extends Component {
         this.props.onSendMessage(this.state.text || this.state.img);
     }
 
+    // Pop Up Functionality
+    popUp(e) {
+        console.log('I didnt pop');
+    }
+
     render() {
         return (
 
@@ -34,7 +39,7 @@ class Input extends Component {
                         value={this.state.text || this.state.img}
                         type='text'
                         placeholder='Enter your message and press ENTER'
-                        autofocus='true'
+                        autoFocus={true}
                     />
                     <button>Send</button>
                 </form>
@@ -43,10 +48,15 @@ class Input extends Component {
                         set='google'
                         onSelect={e => this.onSelect(e)}
                         title='Pick your emoji...' emoji='point_up' 
-                        style={{width: '900px', margin: '0 auto'}}
+                        style={{width: '100%'}}
+                        id='picker'
                     />
                     <div className='emojipopup' id='emojipopup' >
-                        <Emoji emoji={{ id: 'smile', skin: 3 }} size={32} />
+                        <Emoji 
+                            emoji={{ id: 'smile', skin: 3 }} 
+                            size={32} 
+                            onClick={e => this.popUp(e)}
+                        />
                     </div>
                 </div>
             </div>

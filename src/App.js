@@ -19,12 +19,23 @@ function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
-// need to add 0's... 2 min is 2 not 02
+// Check min to see if bug was fixed
 function getTime() {
   let date = new Date();
-  let hour = date.getHours()+1;
+  let hour = date.getHours();
   let min = date.getMinutes();
 
+  function fixMin() {
+    if (min > 10) {
+      return min;
+    } else if (min < 10) {
+      min = '0' + min;
+      return min;
+    }
+    return min;
+  }
+  
+  fixMin();
 
   if (hour > 12) {
     let test = hour - 12;
@@ -35,6 +46,7 @@ function getTime() {
     return time;
   } else if (hour === 12) {
     let time = hour + ':' + min + ' AM'
+    return time;
   } else {
     let time = 'Unkown';
     return time;
@@ -42,6 +54,15 @@ function getTime() {
 }
 
 class App extends Component {
+
+  state = {
+    messages: [],
+    member: {
+      username: randomName(),
+      color: randomColor(),
+      timestamp: getTime()
+    }
+  }
 
   constructor() {
     super();
@@ -57,20 +78,12 @@ class App extends Component {
       this.setState({member});
       const room = this.drone.subscribe('observable-Tea with Walter and Henry');
       room.on('data', (data, member) => {
+        console.log(data, member);
         const messages = this.state.messages;
         messages.push({member, text: data});
         this.setState({messages});
       });
     });
-  }
-
-  state = {
-    messages: [],
-    member: {
-      username: randomName(),
-      color: randomColor(),
-      timestamp: getTime()
-    }
   }
   
   onSendMessage = (message) => {
