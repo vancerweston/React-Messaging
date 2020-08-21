@@ -19,18 +19,22 @@ function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
+// need to add 0's... 2 min is 2 not 02
 function getTime() {
   let date = new Date();
-  let hour = date.getHours();
+  let hour = date.getHours()+1;
   let min = date.getMinutes();
+
 
   if (hour > 12) {
     let test = hour - 12;
     let time = test + ':' + min + ' PM';
     return time;
-  } else if (hour < 12 || hour === 12) {
+  } else if (hour < 12) {
     let time = hour + ':' + min + ' AM';
     return time;
+  } else if (hour === 12) {
+    let time = hour + ':' + min + ' AM'
   } else {
     let time = 'Unkown';
     return time;
