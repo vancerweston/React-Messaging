@@ -6,11 +6,17 @@
 }
 
 .App-header {
-  background-color: #262626;
+  background-color: rgb(61, 60, 60);
   overflow: visible;
   width: 100%;
   text-align: center;
   color: white;
+  height: 50px;
+}
+
+.App-header h1 {
+  margin: 0 auto;
+  color: darkgray;
 }
 
 .Messages-list {
@@ -22,6 +28,7 @@
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
+  background-color: dimgray;
 }
 
 .Messages-message {
@@ -46,14 +53,14 @@
 .Messages-message > .avatar {
   height: 35px;
   width: 35px;
-  border-radius: 50%;
+  border-radius: 40%;
   display: inline-block;
   margin: 0 10px -10px;
 }
 
 .Message-content > .username {
   display: block;
-  color: gray;
+  color: lightgray;
   font-size: 14px;
   padding-bottom: 4px;
 }
@@ -63,28 +70,50 @@
   max-width: 400px;
   margin: 0;
   border-radius: 12px;
-  background-color: cornflowerblue;
+  background-color: rgb(45, 45, 252);
   color: white;
   display: inline-block;
 }
 
 .Message-content > .timestamp {
   font-size: smaller;
-  color: grey;
+  color: lightgray;
 }
 
 .currentMember > .Message-content .text {
-  background-color: orangered;
+  background-color: rgb(103, 189, 243);
 }
 
 .emoji-mart {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  background-color: rgb(61, 60, 60);
+}
+
+#emoji-mart-search-2 {
+  background-color: dimgrey;
+  margin-bottom: 5px;
+}
+
+#emoji-mart-search-2::placeholder {
+  color: white;
+}
+
+.emoji-mart-search-icon {
+  background-color: white;
+  top: 5px;
+}
+
+.emoji-mart-category-label span {
+  background-color: rgb(61, 60, 60);
+  color: white;
+  border-radius: 0 0 10px 10px;
 }
 
 .emoji-mart-scroll {
   height: 125px;
+  background-color: dimgray;
 }
 
 .emoji-mart-preview {
@@ -107,6 +136,15 @@ div#emojipopup {
   max-width: 900px;
   margin: 0 auto;
   text-align: right;
+  background-color: rgb(61, 60, 60);
+}
+
+#emoji-button {
+  filter: grayscale(100%);
+}
+
+body {
+  background-color: rgb(61, 60, 60);
 }
 
 form {
@@ -114,21 +152,28 @@ form {
   width: 100%;
   justify-content: space-between;
   max-width: 900px;
-  margin: 0 auto 10px;
+  margin: 5px auto 5px;
+  background-color: rgb(61, 60, 60);
 }
 
 input {
   padding: 5px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid orangered;
+  border: 1px solid white;
   flex-grow: 1;
+  background-color: dimgray;
+}
+
+input::placeholder {
+  color: white;
+  padding-left: 5px;
 }
 
 button {
   padding: 5px 10px;
   font-size: 16px;
-  background-color: orangered;
+  background-color: rgb(45, 45, 252);
   color: white;
   border: none;
   border-radius: 8px;

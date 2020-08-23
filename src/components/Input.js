@@ -38,14 +38,14 @@ class Input extends Component {
                         onChange={e => this.onChange(e)} 
                         value={this.state.text || this.state.img}
                         type='text'
-                        placeholder='Enter your message and press ENTER'
+                        placeholder='React Message...'
                         autoFocus={true}
                     />
                     <button>Send</button>
                 </form>
                 <div className='emojiContainer' id='emojiContainer' >
                     <Picker 
-                        set='google'
+                        set='apple'
                         onSelect={e => this.onSelect(e)}
                         title='Pick your emoji...' emoji='point_up' 
                         style={{width: '100%'}}
@@ -56,6 +56,7 @@ class Input extends Component {
                             emoji={{ id: 'smile', skin: 3 }} 
                             size={32} 
                             onClick={e => this.popUp(e)}
+                            id='emoji-button'
                         />
                     </div>
                 </div>
