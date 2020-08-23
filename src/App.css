@@ -179,4 +179,10 @@ button {
   border-radius: 8px;
   margin: 0 10px;
   width: 100px;
+  cursor: pointer;
 }
+
+button:active {
+  transform: scale(.9); 
+}
+
